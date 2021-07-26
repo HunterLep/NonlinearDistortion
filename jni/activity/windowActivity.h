@@ -27,23 +27,29 @@
 #include "window/ZKSlideWindow.h"
 
 /*TAG:Macro宏ID*/
-#define ID_WINDOW_RadioButton1    22001
+#define ID_WINDOW_PhotoShow    50020
+#define ID_WINDOW_DebugText18    50019
+#define ID_WINDOW_DebugText17    50018
+#define ID_WINDOW_DebugText16    50017
+#define ID_WINDOW_DebugText15    50016
+#define ID_WINDOW_DebugText14    50015
+#define ID_WINDOW_DebugText13    50014
+#define ID_WINDOW_DebugText12    50013
+#define ID_WINDOW_DebugText11    50012
+#define ID_WINDOW_DebugText10    50011
+#define ID_WINDOW_DebugText9    50010
+#define ID_WINDOW_DebugText8    50009
+#define ID_WINDOW_DebugText7    50008
+#define ID_WINDOW_DebugText6    50007
+#define ID_WINDOW_DebugText5    50006
+#define ID_WINDOW_DebugText4    50005
+#define ID_WINDOW_DebugText3    50004
+#define ID_WINDOW_DebugText2    50003
+#define ID_WINDOW_BothDistortion    22004
+#define ID_WINDOW_LowDistortion    22003
+#define ID_WINDOW_HighDistortion    22002
+#define ID_WINDOW_NormalSignal    22001
 #define ID_WINDOW_RadioGroup1    94001
-#define ID_WINDOW_TextView1    50003
-#define ID_WINDOW_TextView2    50004
-#define ID_WINDOW_TextView3    50005
-#define ID_WINDOW_TextView4    50006
-#define ID_WINDOW_TextView5    50007
-#define ID_WINDOW_TextView6    50008
-#define ID_WINDOW_TextView7    50009
-#define ID_WINDOW_TextView8    50010
-#define ID_WINDOW_TextView9    50011
-#define ID_WINDOW_TextView10    50012
-#define ID_WINDOW_TextView11    50013
-#define ID_WINDOW_TextView12    50014
-#define ID_WINDOW_TextView13    50015
-#define ID_WINDOW_TextView14    50016
-#define ID_WINDOW_TextView15    50017
 #define ID_WINDOW_DebugText1    50002
 #define ID_WINDOW_DistortionDegree    50001
 #define ID_WINDOW_Measure    20002

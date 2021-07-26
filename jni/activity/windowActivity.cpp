@@ -4,22 +4,25 @@
 #include "windowActivity.h"
 
 /*TAG:GlobalVariable全局变量*/
+static ZKTextView* mPhotoShowPtr;
+static ZKTextView* mDebugText18Ptr;
+static ZKTextView* mDebugText17Ptr;
+static ZKTextView* mDebugText16Ptr;
+static ZKTextView* mDebugText15Ptr;
+static ZKTextView* mDebugText14Ptr;
+static ZKTextView* mDebugText13Ptr;
+static ZKTextView* mDebugText12Ptr;
+static ZKTextView* mDebugText11Ptr;
+static ZKTextView* mDebugText10Ptr;
+static ZKTextView* mDebugText9Ptr;
+static ZKTextView* mDebugText8Ptr;
+static ZKTextView* mDebugText7Ptr;
+static ZKTextView* mDebugText6Ptr;
+static ZKTextView* mDebugText5Ptr;
+static ZKTextView* mDebugText4Ptr;
+static ZKTextView* mDebugText3Ptr;
+static ZKTextView* mDebugText2Ptr;
 static ZKRadioGroup* mRadioGroup1Ptr;
-static ZKTextView* mTextView1Ptr;
-static ZKTextView* mTextView2Ptr;
-static ZKTextView* mTextView3Ptr;
-static ZKTextView* mTextView4Ptr;
-static ZKTextView* mTextView5Ptr;
-static ZKTextView* mTextView6Ptr;
-static ZKTextView* mTextView7Ptr;
-static ZKTextView* mTextView8Ptr;
-static ZKTextView* mTextView9Ptr;
-static ZKTextView* mTextView10Ptr;
-static ZKTextView* mTextView11Ptr;
-static ZKTextView* mTextView12Ptr;
-static ZKTextView* mTextView13Ptr;
-static ZKTextView* mTextView14Ptr;
-static ZKTextView* mTextView15Ptr;
 static ZKTextView* mDebugText1Ptr;
 static ZKTextView* mDistortionDegreePtr;
 static ZKButton* mMeasurePtr;
@@ -153,22 +156,25 @@ const char* windowActivity::getAppName() const{
 //TAG:onCreate
 void windowActivity::onCreate() {
 	Activity::onCreate();
+    mPhotoShowPtr = (ZKTextView*)findControlByID(ID_WINDOW_PhotoShow);
+    mDebugText18Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText18);
+    mDebugText17Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText17);
+    mDebugText16Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText16);
+    mDebugText15Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText15);
+    mDebugText14Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText14);
+    mDebugText13Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText13);
+    mDebugText12Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText12);
+    mDebugText11Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText11);
+    mDebugText10Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText10);
+    mDebugText9Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText9);
+    mDebugText8Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText8);
+    mDebugText7Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText7);
+    mDebugText6Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText6);
+    mDebugText5Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText5);
+    mDebugText4Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText4);
+    mDebugText3Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText3);
+    mDebugText2Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText2);
     mRadioGroup1Ptr = (ZKRadioGroup*)findControlByID(ID_WINDOW_RadioGroup1);if(mRadioGroup1Ptr!= NULL){mRadioGroup1Ptr->setCheckedChangeListener(this);}
-    mTextView1Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView1);
-    mTextView2Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView2);
-    mTextView3Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView3);
-    mTextView4Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView4);
-    mTextView5Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView5);
-    mTextView6Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView6);
-    mTextView7Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView7);
-    mTextView8Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView8);
-    mTextView9Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView9);
-    mTextView10Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView10);
-    mTextView11Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView11);
-    mTextView12Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView12);
-    mTextView13Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView13);
-    mTextView14Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView14);
-    mTextView15Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView15);
     mDebugText1Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText1);
     mDistortionDegreePtr = (ZKTextView*)findControlByID(ID_WINDOW_DistortionDegree);
     mMeasurePtr = (ZKButton*)findControlByID(ID_WINDOW_Measure);

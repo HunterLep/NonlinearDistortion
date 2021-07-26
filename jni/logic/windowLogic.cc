@@ -29,7 +29,28 @@
 *
 * 在Eclipse编辑器中  使用 “alt + /”  快捷键可以打开智能提示
 */
-
+int ID;
+static void Changebackground(int checkedID){
+	char path[50]={0};
+	switch(checkedID){
+		case ID_WINDOW_NormalSignal:
+			sprintf(path,"NormalSignal.jpg");
+			mPhotoShowPtr->setBackgroundPic(path);
+			break;
+		case ID_WINDOW_HighDistortion:
+			sprintf(path,"HighDistortion.jpg");
+			mPhotoShowPtr->setBackgroundPic(path);
+			break;
+		case ID_WINDOW_LowDistortion:
+			sprintf(path,"LowDistortion.jpg");
+			mPhotoShowPtr->setBackgroundPic(path);
+			break;
+		case ID_WINDOW_BothDistortion:
+			sprintf(path,"BothDistortion.jpg");
+			mPhotoShowPtr->setBackgroundPic(path);
+			break;
+	}
+}
 
 /**
  * 注册定时器
@@ -133,10 +154,40 @@ static bool onButtonClick_sys_home(ZKButton *pButton) {
     return false;
 }
 
-static bool onButtonClick_Measure(ZKButton *pButton) {
-    LOGD(" ButtonClick Measure !!!\n");
-    return false;
-}
+
 static void onCheckedChanged_RadioGroup1(ZKRadioGroup* pRadioGroup, int checkedID) {
     LOGD(" RadioGroup RadioGroup1 checked %d", checkedID);
+    ID=checkedID;
+    switch(checkedID){
+    	case ID_WINDOW_NormalSignal:
+    		Changebackground(ID_WINDOW_NormalSignal);
+    		break;
+    	case ID_WINDOW_HighDistortion:
+    		Changebackground(ID_WINDOW_HighDistortion);
+    		break;
+    	case ID_WINDOW_LowDistortion:
+    		Changebackground(ID_WINDOW_LowDistortion);
+    		break;
+    	case ID_WINDOW_BothDistortion:
+    		Changebackground(ID_WINDOW_BothDistortion);
+    		break;
+    }
+}
+static bool onButtonClick_Measure(ZKButton *pButton) {
+    LOGD(" ButtonClick Measure !!!\n");
+    switch(ID){
+        	case ID_WINDOW_NormalSignal:
+            	mDistortionDegreePtr->setText("非线性失真度:4%");
+            	break;
+            case ID_WINDOW_HighDistortion:
+            	mDistortionDegreePtr->setText("非线性失真度:30%");
+            	break;
+            case ID_WINDOW_LowDistortion:
+            	mDistortionDegreePtr->setText("非线性失真度:40%");
+            	break;
+            case ID_WINDOW_BothDistortion:
+            	mDistortionDegreePtr->setText("非线性失真度:80%");
+            	break;
+        }
+    return false;
 }

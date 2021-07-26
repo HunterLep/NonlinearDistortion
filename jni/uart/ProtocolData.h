@@ -23,7 +23,8 @@
 /**************************************************/
 
 typedef enum commandtype{
-
+	distortiondegree,
+	debugresult
 }CommandType;
 
 typedef struct {
