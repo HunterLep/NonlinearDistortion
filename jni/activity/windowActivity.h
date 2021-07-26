@@ -23,9 +23,12 @@
 #include "control/ZKSeekBar.h"
 #include "control/ZKEditText.h"
 #include "control/ZKVideoView.h"
+#include "control/ZKRadioGroup.h"
 #include "window/ZKSlideWindow.h"
 
 /*TAG:Macro宏ID*/
+#define ID_WINDOW_RadioButton1    22001
+#define ID_WINDOW_RadioGroup1    94001
 #define ID_WINDOW_TextView1    50003
 #define ID_WINDOW_TextView2    50004
 #define ID_WINDOW_TextView3    50005
@@ -53,6 +56,7 @@ class windowActivity : public Activity,
                      public ZKListView::AbsListAdapter,
                      public ZKSlideWindow::ISlideItemClickListener,
                      public EasyUIContext::ITouchListener,
+                     public ZKRadioGroup::ICheckedChangeListener,
                      public ZKEditText::ITextChangeListener,
                      public ZKVideoView::IVideoPlayerMessageListener
 {
@@ -92,6 +96,7 @@ protected:
     virtual void onSlideItemClick(ZKSlideWindow *pSlideWindow, int index);
 
     virtual bool onTouchEvent(const MotionEvent &ev);
+    virtual void onCheckedChanged(ZKRadioGroup* pRadioGroup, int checkedID);
 
     virtual void onTextChanged(ZKTextView *pTextView, const string &text);
 

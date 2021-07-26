@@ -137,3 +137,6 @@ static bool onButtonClick_Measure(ZKButton *pButton) {
     LOGD(" ButtonClick Measure !!!\n");
     return false;
 }
+static void onCheckedChanged_RadioGroup1(ZKRadioGroup* pRadioGroup, int checkedID) {
+    LOGD(" RadioGroup RadioGroup1 checked %d", checkedID);
+}

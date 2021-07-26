@@ -260,6 +260,8 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/obj/local/armeabi/objs/zkgu
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/system/Condition.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/utils/MessageQueue.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/system/Condition.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKRadioGroup.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCheckBox.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/window/ZKSlideWindow.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/windowLogic.cc \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h
@@ -783,6 +785,10 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/system/Conditio
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/utils/MessageQueue.h:
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/system/Condition.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKRadioGroup.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCheckBox.h:
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/window/ZKSlideWindow.h:
 

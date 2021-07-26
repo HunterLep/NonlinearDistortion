@@ -4,6 +4,7 @@
 #include "windowActivity.h"
 
 /*TAG:GlobalVariable全局变量*/
+static ZKRadioGroup* mRadioGroup1Ptr;
 static ZKTextView* mTextView1Ptr;
 static ZKTextView* mTextView2Ptr;
 static ZKTextView* mTextView3Ptr;
@@ -121,6 +122,16 @@ static S_VideoViewCallback SVideoViewCallbackTab[] = {
 };
 
 
+typedef void (*RadioGroupCallback)(ZKRadioGroup*, int);
+typedef struct {
+  int id;
+  RadioGroupCallback onCheckedChanged;
+}S_RadioGroupCallback;
+/*TAG:RadioGroupCallbackTab*/
+static S_RadioGroupCallback SRadioGroupCallbackTab[] = {
+    ID_WINDOW_RadioGroup1, onCheckedChanged_RadioGroup1,
+};
+
 windowActivity::windowActivity() {
 	//todo add init code here
 	mVideoLoopIndex = -1;
@@ -142,6 +153,7 @@ const char* windowActivity::getAppName() const{
 //TAG:onCreate
 void windowActivity::onCreate() {
 	Activity::onCreate();
+    mRadioGroup1Ptr = (ZKRadioGroup*)findControlByID(ID_WINDOW_RadioGroup1);if(mRadioGroup1Ptr!= NULL){mRadioGroup1Ptr->setCheckedChangeListener(this);}
     mTextView1Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView1);
     mTextView2Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView2);
     mTextView3Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView3);
@@ -430,4 +442,13 @@ void windowActivity::unregisterUserTimer(int id) {
 
 void windowActivity::resetUserTimer(int id, int time) {
 	resetTimer(id, time);
+}
+void windowActivity::onCheckedChanged(ZKRadioGroup* pRadioGroup, int checkedID) {
+    int tablen = sizeof(SRadioGroupCallbackTab) / sizeof(S_RadioGroupCallback);
+    for (int i = 0; i < tablen; ++i) {
+        if (SRadioGroupCallbackTab[i].id == pRadioGroup->getID()) {
+        	SRadioGroupCallbackTab[i].onCheckedChanged(pRadioGroup, checkedID);
+            break;
+        }
+    }
 }
