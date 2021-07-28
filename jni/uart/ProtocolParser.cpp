@@ -10,6 +10,7 @@
 #include "CommDef.h"
 #include "uart/ProtocolParser.h"
 #include "utils/Log.h"
+#include "../DataHandler/LinkedList.h"
 
 static Mutex sLock;
 static std::vector<OnProtocolDataUpdateFun> sProtocolDataUpdateListenerList;
@@ -69,10 +70,8 @@ BYTE getCheckSum(const BYTE *pData, int len) {
  */
 static void procParse(const BYTE *pData, UINT len) {
 	// CmdID
-	switch (MAKEWORD(pData[3], pData[2])) {
-
-	}
-
+	double value = ((pData[1] << 8) | pData[0]) / 1000.0;
+	sProtocolData.value = value;
 	// 通知协议数据更新
   // Notify protocol data update
 	notifyProtocolDataUpdate(sProtocolData);
@@ -147,4 +146,8 @@ int parseProtocol(const BYTE *pData, UINT len) {
 	}
 
 	return len - remainLen;
+}
+
+void parseProtocal(LinkedList<uint8_t> *newData) {
+	procParse(newData->toV(), newData->size);
 }

@@ -13,10 +13,12 @@
 
 #include "uart/UartContext.h"
 #include "utils/Log.h"
+#include "../DataHandler/DataHandler.h"
 
 #define UART_DATA_BUF_LEN			16384	// 16KB
 
 extern int parseProtocol(const BYTE *pData, UINT len);
+extern void parseProtocal(LinkedList<uint8_t> *);
 
 static const char* getBaudRate(UINT baudRate) {
 	struct {
@@ -140,23 +142,27 @@ bool UartContext::readyToRun() {
 
 bool UartContext::threadLoop() {
 	if (mIsOpen) {
-		// 可能上一次解析后有残留数据，需要拼接起来
-    // There may be residual data after the last analysis, which needs to be spliced
-		int readNum = read(mUartID, mDataBufPtr + mDataBufLen, UART_DATA_BUF_LEN - mDataBufLen);
+//		int readNum = read(mUartID, mDataBufPtr + mDataBufLen, UART_DATA_BUF_LEN - mDataBufLen);
+		int readNum = read(mUartID, mDataBufPtr, UART_DATA_BUF_LEN);
 
 		if (readNum > 0) {
-			mDataBufLen += readNum;
+//			mDataBufLen += readNum;
+//			int len = parseProtocol(mDataBufPtr, mDataBufLen);
+//			if ((len > 0) && (len < mDataBufLen)) {
+//				memcpy(mDataBufPtr, mDataBufPtr + len, mDataBufLen - len);
+//			}
+//			mDataBufLen -= len;
 
-			// 解析协议
-      // Parse protocol
-			int len = parseProtocol(mDataBufPtr, mDataBufLen);
-			if ((len > 0) && (len < mDataBufLen)) {
-				// 将未解析的数据移到头部
-        // Move unparsed data to the head
-				memcpy(mDataBufPtr, mDataBufPtr + len, mDataBufLen - len);
+			LOGD("Received: %d", readNum);
+			LinkedList<uint8_t>* readData = new LinkedList<uint8_t>(mDataBufPtr, readNum);
+			DataHandler::handler = parseProtocal;
+			try{
+				DataHandler::BufferHandler(readData);
+			} catch (DataHandlerException &e){
+				LOGD("Handler Error");
+			} catch (LinkedListNotEnoughException &e) {
+				LOGD("LinkedList Error");
 			}
-
-			mDataBufLen -= len;
 		} else {
 			Thread::sleep(50);
 		}

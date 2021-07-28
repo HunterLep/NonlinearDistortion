@@ -1,5 +1,6 @@
 #pragma once
 #include "uart/ProtocolSender.h"
+#include "cstdio"
 /*
 *此文件由GUI工具生成
 *文件功能：用于处理用户的逻辑相应代码
@@ -29,6 +30,12 @@
 *
 * 在Eclipse编辑器中  使用 “alt + /”  快捷键可以打开智能提示
 */
+static const BYTE NormalSignal[2]={CMDID_NormalSignal,0x00};
+static const BYTE HighDistortion[2]={CMDID_HighDistortion,0x00};
+static const BYTE LowDistortion[2]={CMDID_LowDistortion,0X00};
+static const BYTE BothDistortion[2]={CMDID_BothDistortion,0X00};
+static const BYTE CrossDistortion[2]={CMDID_CrossDistortion,0x00};
+
 int ID;
 static void Changebackground(int checkedID){
 	char path[50]={0};
@@ -49,6 +56,9 @@ static void Changebackground(int checkedID){
 			sprintf(path,"BothDistortion.jpg");
 			mPhotoShowPtr->setBackgroundPic(path);
 			break;
+		case ID_WINDOW_CrossDistortion:
+			sprintf(path,"CrossDistortion.jpg");
+			mPhotoShowPtr->setBackgroundPic(path);
 	}
 }
 
@@ -104,7 +114,9 @@ static void onUI_quit() {
  * 串口数据回调接口
  */
 static void onProtocolDataUpdate(const SProtocolData &data) {
-
+	char string[50];
+	sprintf(string, "非线性失真度:%.3lf%%", data.value);
+	mDistortionDegreePtr->setText(string);
 }
 
 /**
@@ -171,23 +183,28 @@ static void onCheckedChanged_RadioGroup1(ZKRadioGroup* pRadioGroup, int checkedI
     	case ID_WINDOW_BothDistortion:
     		Changebackground(ID_WINDOW_BothDistortion);
     		break;
+    	case ID_WINDOW_CrossDistortion:
+    		Changebackground(ID_WINDOW_CrossDistortion);
+    		break;
     }
 }
 static bool onButtonClick_Measure(ZKButton *pButton) {
     LOGD(" ButtonClick Measure !!!\n");
     switch(ID){
         	case ID_WINDOW_NormalSignal:
-            	mDistortionDegreePtr->setText("非线性失真度:4%");
+        		sendMessage(NormalSignal,2);
             	break;
             case ID_WINDOW_HighDistortion:
-            	mDistortionDegreePtr->setText("非线性失真度:30%");
+            	sendMessage(HighDistortion,2);
             	break;
             case ID_WINDOW_LowDistortion:
-            	mDistortionDegreePtr->setText("非线性失真度:40%");
+            	sendMessage(LowDistortion,2);
             	break;
             case ID_WINDOW_BothDistortion:
-            	mDistortionDegreePtr->setText("非线性失真度:80%");
+            	sendMessage(BothDistortion,2);
             	break;
+            case ID_WINDOW_CrossDistortion:
+            	sendMessage(CrossDistortion,2);
         }
     return false;
 }
