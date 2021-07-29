@@ -4,6 +4,8 @@
 #include "windowActivity.h"
 
 /*TAG:GlobalVariable全局变量*/
+static ZKButton* mButton1Ptr;
+static ZKDiagram* mDiagram1Ptr;
 static ZKTextView* mPhotoShowPtr;
 static ZKTextView* mDebugText18Ptr;
 static ZKTextView* mDebugText17Ptr;
@@ -64,6 +66,7 @@ typedef struct {
 
 /*TAG:ButtonCallbackTab按键映射表*/
 static S_ButtonCallback sButtonCallbackTab[] = {
+    ID_WINDOW_Button1, onButtonClick_Button1,
     ID_WINDOW_Measure, onButtonClick_Measure,
     ID_WINDOW_sys_home, onButtonClick_sys_home,
 };
@@ -156,6 +159,8 @@ const char* windowActivity::getAppName() const{
 //TAG:onCreate
 void windowActivity::onCreate() {
 	Activity::onCreate();
+    mButton1Ptr = (ZKButton*)findControlByID(ID_WINDOW_Button1);
+    mDiagram1Ptr = (ZKDiagram*)findControlByID(ID_WINDOW_Diagram1);
     mPhotoShowPtr = (ZKTextView*)findControlByID(ID_WINDOW_PhotoShow);
     mDebugText18Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText18);
     mDebugText17Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText17);

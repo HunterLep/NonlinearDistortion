@@ -27,6 +27,8 @@
 #include "window/ZKSlideWindow.h"
 
 /*TAG:Macro宏ID*/
+#define ID_WINDOW_Button1    20001
+#define ID_WINDOW_Diagram1    120001
 #define ID_WINDOW_CrossDistortion    22005
 #define ID_WINDOW_PhotoShow    50020
 #define ID_WINDOW_DebugText18    50019

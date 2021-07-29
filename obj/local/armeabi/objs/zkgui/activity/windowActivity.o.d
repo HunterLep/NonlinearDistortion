@@ -265,7 +265,8 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/obj/local/armeabi/objs/zkgu
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/window/ZKSlideWindow.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/windowLogic.cc \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h \
- D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdio
+ D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdio \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKRadioGroup.h
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/windowActivity.h:
 
@@ -798,3 +799,5 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/windowLogic.cc:
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h:
 
 D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdio:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKRadioGroup.h:
