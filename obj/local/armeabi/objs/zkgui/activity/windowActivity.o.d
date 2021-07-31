@@ -242,6 +242,7 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/obj/local/armeabi/objs/zkgu
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKDigitalClock.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKTextView.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKBase.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKPainter.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKButton.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCircleBar.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKDiagram.h \
@@ -263,10 +264,17 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/obj/local/armeabi/objs/zkgu
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKRadioGroup.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCheckBox.h \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/window/ZKSlideWindow.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/DebugHandler.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/../include/control/ZKTextView.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/../DataHandler/LinkedList.h \
+ D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdlib \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/windowLogic.cc \
  D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h \
  D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdio \
- D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKRadioGroup.h
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKRadioGroup.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKDiagram.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKTextView.h \
+ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/Rewrite.h
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/windowActivity.h:
 
@@ -752,6 +760,8 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKTextV
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKBase.h:
 
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKPainter.h:
+
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKButton.h:
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCircleBar.h:
@@ -794,6 +804,14 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/control/ZKCheck
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/include/window/ZKSlideWindow.h:
 
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/DebugHandler.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/../include/control/ZKTextView.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/activity/../debugHandler/../DataHandler/LinkedList.h:
+
+D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdlib:
+
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/windowLogic.cc:
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h:
@@ -801,3 +819,9 @@ D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/uart/ProtocolSender.h:
 D:\zkswe\flythings\bin\/../sdk/platforms/z11s/prebuilt/include/stlport/cstdio:
 
 D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKRadioGroup.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKDiagram.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/../include/control/ZKTextView.h:
+
+D:/zkswe/flythings/bin/workspace/NonlinearDistortion/jni/logic/Rewrite.h:

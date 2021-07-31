@@ -41,6 +41,8 @@ public:
     V *pop();
     V *toV();
     void push(V value);
+    LinkedList<V> *copy();
+    void removeAll();
 };
 
 class LinkedListNotEnoughException : exception {
@@ -250,6 +252,26 @@ V *LinkedList<V>::pop() {
 template<typename V>
 void LinkedList<V>::push(V value) {
     addLast(value);
+}
+
+template<typename V>
+LinkedList<V> *LinkedList<V>::copy() {
+	LinkedList<V> *result = new LinkedList<V>();
+	for (int i = 0;i < this->size;i ++)
+		result->addLast(this->get(i));
+	return result;
+}
+
+template<typename V>
+void LinkedList<V>::removeAll(){
+	Node *p = rear;
+	while (p != head) {
+	    rear->pre->next = NULL;
+	    rear = rear->pre;
+	    size--;
+	    free(p);
+	    p=rear;
+	}
 }
 
 #endif //SERIALSCREENCORE_LINKEDLIST_H

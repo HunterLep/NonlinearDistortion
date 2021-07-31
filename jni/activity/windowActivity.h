@@ -13,6 +13,7 @@
 
 #include "utils/Log.h"
 #include "control/ZKDigitalClock.h"
+#include "control/ZKPainter.h"
 #include "control/ZKButton.h"
 #include "control/ZKCircleBar.h"
 #include "control/ZKDiagram.h"
@@ -27,7 +28,9 @@
 #include "window/ZKSlideWindow.h"
 
 /*TAG:Macro宏ID*/
-#define ID_WINDOW_Button1    20001
+#define ID_WINDOW_Show    20003
+#define ID_WINDOW_Clear    20001
+#define ID_WINDOW_Painter1    52001
 #define ID_WINDOW_Diagram1    120001
 #define ID_WINDOW_CrossDistortion    22005
 #define ID_WINDOW_PhotoShow    50020

@@ -2,9 +2,12 @@
 /gen auto by zuitools
 ***********************************************/
 #include "windowActivity.h"
+#include "../debugHandler/DebugHandler.h"
 
 /*TAG:GlobalVariable全局变量*/
-static ZKButton* mButton1Ptr;
+static ZKButton* mShowPtr;
+static ZKButton* mClearPtr;
+static ZKPainter* mPainter1Ptr;
 static ZKDiagram* mDiagram1Ptr;
 static ZKTextView* mPhotoShowPtr;
 static ZKTextView* mDebugText18Ptr;
@@ -30,6 +33,7 @@ static ZKTextView* mDistortionDegreePtr;
 static ZKButton* mMeasurePtr;
 static ZKButton* msys_homePtr;
 static windowActivity* mActivityPtr;
+static DebugHandler *mDebugHandler;
 
 /*register activity*/
 REGISTER_ACTIVITY(windowActivity);
@@ -66,7 +70,8 @@ typedef struct {
 
 /*TAG:ButtonCallbackTab按键映射表*/
 static S_ButtonCallback sButtonCallbackTab[] = {
-    ID_WINDOW_Button1, onButtonClick_Button1,
+    ID_WINDOW_Show, onButtonClick_Show,
+    ID_WINDOW_Clear, onButtonClick_Clear,
     ID_WINDOW_Measure, onButtonClick_Measure,
     ID_WINDOW_sys_home, onButtonClick_sys_home,
 };
@@ -159,7 +164,9 @@ const char* windowActivity::getAppName() const{
 //TAG:onCreate
 void windowActivity::onCreate() {
 	Activity::onCreate();
-    mButton1Ptr = (ZKButton*)findControlByID(ID_WINDOW_Button1);
+    mShowPtr = (ZKButton*)findControlByID(ID_WINDOW_Show);
+    mClearPtr = (ZKButton*)findControlByID(ID_WINDOW_Clear);
+    mPainter1Ptr = (ZKPainter*)findControlByID(ID_WINDOW_Painter1);
     mDiagram1Ptr = (ZKDiagram*)findControlByID(ID_WINDOW_Diagram1);
     mPhotoShowPtr = (ZKTextView*)findControlByID(ID_WINDOW_PhotoShow);
     mDebugText18Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText18);
@@ -188,6 +195,28 @@ void windowActivity::onCreate() {
 	onUI_init();
     registerProtocolDataUpdateListener(onProtocolDataUpdate); 
     rigesterActivityTimer();
+
+    ZKTextView *list[] = {
+    		mDebugText1Ptr,
+    		mDebugText2Ptr,
+    		mDebugText3Ptr,
+    		mDebugText4Ptr,
+    		mDebugText5Ptr,
+    		mDebugText6Ptr,
+    		mDebugText7Ptr,
+    		mDebugText8Ptr,
+    		mDebugText9Ptr,
+    		mDebugText10Ptr,
+    		mDebugText11Ptr,
+    		mDebugText12Ptr,
+    		mDebugText13Ptr,
+    		mDebugText14Ptr,
+    		mDebugText15Ptr,
+    		mDebugText16Ptr,
+    		mDebugText17Ptr,
+    		mDebugText18Ptr
+    };
+    mDebugHandler = new DebugHandler(18, list);
 }
 
 void windowActivity::onClick(ZKBase *pBase) {
