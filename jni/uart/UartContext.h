@@ -21,7 +21,9 @@ public:
 
 	bool isOpen() { return mIsOpen; }
 
-	bool send(const BYTE *pData, UINT len);
+	bool sendMessage(const BYTE *pData, UINT len);
+
+	bool sendNum(const int *pData, UINT len);
 
 	static UartContext* getInstance();
 

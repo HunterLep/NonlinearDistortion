@@ -17,7 +17,7 @@ void ZKDiagram::ClearData(int index){
 
 }
 
-void ZKDiagram::setDataStraight(int index){
+void ZKDiagram::setLineStraight(int index){
 	for (int i = 0; i < DIAGRAM_SIZE; i++) {
 				sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
 				sPoints[i].y = 5;

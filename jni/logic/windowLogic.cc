@@ -290,7 +290,7 @@ static bool onButtonClick_Clear(ZKButton *pButton) {
 	else{
 		mShowPtr->setText("显示波形");
 		mActivityPtr->unregisterUserTimer(0);
-		mDiagram1Ptr->setDataStraight(0);
+		mDiagram1Ptr->setLineStraight(0);
 	}
 	return false;
 }
@@ -316,7 +316,7 @@ static bool onButtonClick_Show(ZKButton *pButton) {
 	else{
 		mShowPtr->setText("显示波形");
 		mActivityPtr->unregisterUserTimer(0);
-		mDiagram1Ptr->setDataStraight(0);
+		mDiagram1Ptr->setLineStraight(0);
 	}
 
 	return false;

@@ -12,5 +12,6 @@
 
 bool sendProtocol(const UINT16 cmdID,const BYTE *pData, BYTE len);
 bool sendMessage(const BYTE *pData,BYTE len);
+bool sendNum(const int* pData , BYTE len);
 
 #endif /* _UART_PROTOCOL_SENDER_H_ */

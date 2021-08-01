@@ -107,20 +107,36 @@ void UartContext::closeUart() {
 	}
 }
 
-bool UartContext::send(const BYTE *pData, UINT len) {
+bool UartContext::sendMessage(const BYTE *pData, UINT len) {
 	if (!mIsOpen) {
 		return false;
 	}
 
 	if (write(mUartID, pData, len) != (int) len) {	// fail
-		LOGD("send Fail\n");
+		LOGD("sendMessage Fail\n");
 		return false;
 	}
 
-	// success
-//	LOGD("send Success\n");
+//	 success
+	LOGD("send Success\n");
 
 	return true;
+}
+
+bool UartContext::sendNum(const int *pData, UINT len){
+	if (!mIsOpen) {
+		return false;
+	}
+
+	if (write(mUartID, pData , len) != (int) len) {
+		LOGD("sendNumber Fail");
+		return false;
+	}
+
+	LOGD("send Success\n");
+
+	return true;
+
 }
 
 UartContext* UartContext::getInstance() {

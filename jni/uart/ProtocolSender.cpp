@@ -54,6 +54,14 @@ bool sendMessage(const BYTE *pData,BYTE len){
 	BYTE dataBuf[256];
 	for(int i=0;i<len;i++)
 		dataBuf[i]=pData[i];
-	return UARTCONTEXT->send(dataBuf,len);
+	return UARTCONTEXT->sendMessage(dataBuf,len);
 
+}
+
+bool sendNum(const BYTE *pData , BYTE len){
+	int dataBuf[256];
+	for(int i = 0;i < len;i ++){
+		dataBuf[i] = pData[i];
+	}
+	return UARTCONTEXT->sendNum(dataBuf, len);
 }
