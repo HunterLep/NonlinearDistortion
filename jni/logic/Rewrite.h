@@ -1,3 +1,4 @@
+#include "uart/ProtocolSender.h"
 #include "../include/control/ZKDiagram.h"
 #include "cstdio"
 #include "../include/control/ZKRadioGroup.h"
@@ -10,8 +11,16 @@ static MPPOINT sPoints[DIAGRAM_SIZE];
 void ZKDiagram::ClearData(int index){
 	for (int i = 0; i < DIAGRAM_SIZE; i++) {
 			sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
-			sPoints[i].y = 5;
+			sPoints[i].y = 500;
 		}
-	mDiagram1Ptr->setData(0, sPoints, DIAGRAM_SIZE);
+	mDiagram1Ptr->setData(index, sPoints, DIAGRAM_SIZE);
 
+}
+
+void ZKDiagram::setDataStraight(int index){
+	for (int i = 0; i < DIAGRAM_SIZE; i++) {
+				sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
+				sPoints[i].y = 5;
+			}
+		mDiagram1Ptr->setData(index, sPoints, DIAGRAM_SIZE);
 }

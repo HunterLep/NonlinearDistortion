@@ -1,39 +1,34 @@
 #pragma once
-#include "uart/ProtocolSender.h"
-#include "cstdio"
-#include "../include/control/ZKRadioGroup.h"
-#include "../include/control/ZKDiagram.h"
-#include "../include/control/ZKTextView.h"
 #include "Rewrite.h"
 /*
-*此文件由GUI工具生成
-*文件功能：用于处理用户的逻辑相应代码
-*功能说明：
-*========================onButtonClick_XXXX
+ *此文件由GUI工具生成
+ *文件功能：用于处理用户的逻辑相应代码
+ *功能说明：
+ *========================onButtonClick_XXXX
 当页面中的按键按下后系统会调用对应的函数，XXX代表GUI工具里面的[ID值]名称，
 如Button1,当返回值为false的时候系统将不再处理这个按键，返回true的时候系统将会继续处理此按键。比如SYS_BACK.
-*========================onSlideWindowItemClick_XXXX(int index) 
+ *========================onSlideWindowItemClick_XXXX(int index)
 当页面中存在滑动窗口并且用户点击了滑动窗口的图标后系统会调用此函数,XXX代表GUI工具里面的[ID值]名称，
 如slideWindow1;index 代表按下图标的偏移值
-*========================onSeekBarChange_XXXX(int progress) 
+ *========================onSeekBarChange_XXXX(int progress)
 当页面中存在滑动条并且用户改变了进度后系统会调用此函数,XXX代表GUI工具里面的[ID值]名称，
 如SeekBar1;progress 代表当前的进度值
-*========================ogetListItemCount_XXXX() 
+ *========================ogetListItemCount_XXXX()
 当页面中存在滑动列表的时候，更新的时候系统会调用此接口获取列表的总数目,XXX代表GUI工具里面的[ID值]名称，
 如List1;返回值为当前列表的总条数
-*========================oobtainListItemData_XXXX(ZKListView::ZKListItem *pListItem, int index)
+ *========================oobtainListItemData_XXXX(ZKListView::ZKListItem *pListItem, int index)
  当页面中存在滑动列表的时候，更新的时候系统会调用此接口获取列表当前条目下的内容信息,XXX代表GUI工具里面的[ID值]名称，
 如List1;pListItem 是贴图中的单条目对象，index是列表总目的偏移量。具体见函数说明
-*========================常用接口===============
-*LOGD(...)  打印调试信息的接口
-*mTextXXXPtr->setText("****") 在控件TextXXX上显示文字****
-*mButton1Ptr->setSelected(true); 将控件mButton1设置为选中模式，图片会切换成选中图片，按钮文字会切换为选中后的颜色
-*mSeekBarPtr->setProgress(12) 在控件mSeekBar上将进度调整到12
-*mListView1Ptr->refreshListView() 让mListView1 重新刷新，当列表数据变化后调用
-*mDashbroadView1Ptr->setTargetAngle(120) 在控件mDashbroadView1上指针显示角度调整到120度
-*
-* 在Eclipse编辑器中  使用 “alt + /”  快捷键可以打开智能提示
-*/
+ *========================常用接口===============
+ *LOGD(...)  打印调试信息的接口
+ *mTextXXXPtr->setText("****") 在控件TextXXX上显示文字****
+ *mButton1Ptr->setSelected(true); 将控件mButton1设置为选中模式，图片会切换成选中图片，按钮文字会切换为选中后的颜色
+ *mSeekBarPtr->setProgress(12) 在控件mSeekBar上将进度调整到12
+ *mListView1Ptr->refreshListView() 让mListView1 重新刷新，当列表数据变化后调用
+ *mDashbroadView1Ptr->setTargetAngle(120) 在控件mDashbroadView1上指针显示角度调整到120度
+ *
+ * 在Eclipse编辑器中  使用 “alt + /”  快捷键可以打开智能提示
+ */
 static double data[]={
 		0.841471,0.891207,0.932039,0.963558,0.985450,0.997495,0.999574,0.991665,0.973848,0.946300,0.909297,0.863209,0.808496,
 		0.745705,0.675463,0.598472,0.515501,0.427380,0.334988,0.239249,0.141120,0.041581,-0.058374,-0.157746,-0.255541,-0.350783,
@@ -88,25 +83,25 @@ static bool sIsRefreshing = false;
 static void Changebackground(int checkedID){
 	char path[50]={0};
 	switch(checkedID){
-		case ID_WINDOW_NormalSignal:
-			sprintf(path,"NormalSignal.jpg");
-			mPhotoShowPtr->setBackgroundPic(path);
-			break;
-		case ID_WINDOW_HighDistortion:
-			sprintf(path,"HighDistortion.jpg");
-			mPhotoShowPtr->setBackgroundPic(path);
-			break;
-		case ID_WINDOW_LowDistortion:
-			sprintf(path,"LowDistortion.jpg");
-			mPhotoShowPtr->setBackgroundPic(path);
-			break;
-		case ID_WINDOW_BothDistortion:
-			sprintf(path,"BothDistortion.jpg");
-			mPhotoShowPtr->setBackgroundPic(path);
-			break;
-		case ID_WINDOW_CrossDistortion:
-			sprintf(path,"CrossDistortion.jpg");
-			mPhotoShowPtr->setBackgroundPic(path);
+	case ID_WINDOW_NormalSignal:
+		sprintf(path,"NormalSignal.jpg");
+		mPhotoShowPtr->setBackgroundPic(path);
+		break;
+	case ID_WINDOW_HighDistortion:
+		sprintf(path,"HighDistortion.jpg");
+		mPhotoShowPtr->setBackgroundPic(path);
+		break;
+	case ID_WINDOW_LowDistortion:
+		sprintf(path,"LowDistortion.jpg");
+		mPhotoShowPtr->setBackgroundPic(path);
+		break;
+	case ID_WINDOW_BothDistortion:
+		sprintf(path,"BothDistortion.jpg");
+		mPhotoShowPtr->setBackgroundPic(path);
+		break;
+	case ID_WINDOW_CrossDistortion:
+		sprintf(path,"CrossDistortion.jpg");
+		mPhotoShowPtr->setBackgroundPic(path);
 	}
 }
 
@@ -116,8 +111,8 @@ static void Changebackground(int checkedID){
  * 注意：id不能重复
  */
 static S_ACTIVITY_TIMEER REGISTER_ACTIVITY_TIMER_TAB[] = {
-	//{0,  6000}, //定时器id=0, 时间间隔6秒
-	//{1,  1000},
+		//{0,  6000}, //定时器id=0, 时间间隔6秒
+		//{1,  1000},
 };
 
 /**
@@ -125,21 +120,21 @@ static S_ACTIVITY_TIMEER REGISTER_ACTIVITY_TIMER_TAB[] = {
  */
 
 static void onUI_init(){
-    //Tips :添加 UI初始化的显示代码到这里,如:mText1Ptr->setText("123");
+	//Tips :添加 UI初始化的显示代码到这里,如:mText1Ptr->setText("123");
 	for (int i = 0; i < DIAGRAM_SIZE; i++) {
-				sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
-				sPoints[i].y = 5;
-			}
-		mDiagram1Ptr->setData(0, sPoints, DIAGRAM_SIZE);
+		sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
+		sPoints[i].y = 5;
+	}
+	mDiagram1Ptr->setData(0, sPoints, DIAGRAM_SIZE);
 }
 
 /**
  * 当切换到该界面时触发
  */
 static void onUI_intent(const Intent *intentPtr) {
-    if (intentPtr != NULL) {
-        //TODO
-    }
+	if (intentPtr != NULL) {
+		//TODO
+	}
 }
 
 /*
@@ -190,13 +185,13 @@ static bool onUI_Timer(int id){
 		return true;
 	}
 	indexa++;
-	indexa = indexa *255 / 50;
+	indexa = indexa * 255 / 50;
 	if(id == 0){
-		if(indexa>50){
+		if(indexa > 50){
 			indexa = 0;
 		}
 		double v = data[indexa]+5;
-//	LOGD("%d %lf\n",indexa,v);
+		LOGD("%d %lf\n",indexa,v);
 		mDiagram1Ptr->addData(id,v);
 	}
 	return true;
@@ -212,104 +207,117 @@ static bool onUI_Timer(int id){
  *            触摸事件将继续传递到控件上
  */
 static bool onwindowActivityTouchEvent(const MotionEvent &ev) {
-    switch (ev.mActionStatus) {
-		case MotionEvent::E_ACTION_DOWN://触摸按下
-			//LOGD("时刻 = %ld 坐标  x = %d, y = %d", ev.mEventTime, ev.mX, ev.mY);
-			break;
-		case MotionEvent::E_ACTION_MOVE://触摸滑动
-			break;
-		case MotionEvent::E_ACTION_UP:  //触摸抬起
-			break;
-		default:
-			break;
+	switch (ev.mActionStatus) {
+	case MotionEvent::E_ACTION_DOWN://触摸按下
+		//LOGD("时刻 = %ld 坐标  x = %d, y = %d", ev.mEventTime, ev.mX, ev.mY);
+		break;
+	case MotionEvent::E_ACTION_MOVE://触摸滑动
+		break;
+	case MotionEvent::E_ACTION_UP:  //触摸抬起
+		break;
+	default:
+		break;
 	}
 	return false;
 }
 static bool onButtonClick_sys_home(ZKButton *pButton) {
-    LOGD(" ButtonClick sys_home !!!\n");
-    return false;
+	LOGD(" ButtonClick sys_home !!!\n");
+	return false;
 }
 
 
 static void onCheckedChanged_RadioGroup1(ZKRadioGroup* pRadioGroup, int checkedID) {
-    LOGD(" RadioGroup RadioGroup1 checked %d", checkedID);
-    ID=checkedID;
-    char str[16] = {0};
-    switch(checkedID){
-    	case ID_WINDOW_NormalSignal:
-    		sprintf(str, "Normal");
-    		Changebackground(ID_WINDOW_NormalSignal);
-    		break;
-    	case ID_WINDOW_HighDistortion:
-    		sprintf(str, "High");
-    		Changebackground(ID_WINDOW_HighDistortion);
-    		break;
-    	case ID_WINDOW_LowDistortion:
-    		sprintf(str, "Low");
-    		Changebackground(ID_WINDOW_LowDistortion);
-    		break;
-    	case ID_WINDOW_BothDistortion:
-    		sprintf(str, "Both");
-    		Changebackground(ID_WINDOW_BothDistortion);
-    		break;
-    	case ID_WINDOW_CrossDistortion:
-    		sprintf(str, "Cross");
-    		Changebackground(ID_WINDOW_CrossDistortion);
-    		break;
-    }
-    mDebugHandler->addDebugMessage(str);
+	LOGD(" RadioGroup RadioGroup1 checked %d", checkedID);
+	ID=checkedID;
+	char str[16] = {0};
+	switch(checkedID){
+	case ID_WINDOW_NormalSignal:
+		sprintf(str, "Normal");
+		Changebackground(ID_WINDOW_NormalSignal);
+		break;
+	case ID_WINDOW_HighDistortion:
+		sprintf(str, "High");
+		Changebackground(ID_WINDOW_HighDistortion);
+		break;
+	case ID_WINDOW_LowDistortion:
+		sprintf(str, "Low");
+		Changebackground(ID_WINDOW_LowDistortion);
+		break;
+	case ID_WINDOW_BothDistortion:
+		sprintf(str, "Both");
+		Changebackground(ID_WINDOW_BothDistortion);
+		break;
+	case ID_WINDOW_CrossDistortion:
+		sprintf(str, "Cross");
+		Changebackground(ID_WINDOW_CrossDistortion);
+		break;
+	}
+	mDebugHandler->addDebugMessage(str);
 }
 static bool onButtonClick_Measure(ZKButton *pButton) {
-    LOGD(" ButtonClick Measure !!!\n");
-    switch(ID){
-        	case ID_WINDOW_NormalSignal:
-        		sendMessage(NormalSignal,2);
-        		mDistortionDegreePtr->setText("1234567890");
-            	break;
-            case ID_WINDOW_HighDistortion:
-            	sendMessage(HighDistortion,2);
-            	break;
-            case ID_WINDOW_LowDistortion:
-            	sendMessage(LowDistortion,2);
-            	break;
-            case ID_WINDOW_BothDistortion:
-            	sendMessage(BothDistortion,2);
-            	break;
-            case ID_WINDOW_CrossDistortion:
-            	sendMessage(CrossDistortion,2);
-        }
-    return false;
+	LOGD(" ButtonClick Measure !!!\n");
+	switch(ID){
+	case ID_WINDOW_NormalSignal:
+		sendMessage(NormalSignal,2);
+		mDistortionDegreePtr->setText("1234567890");
+		break;
+	case ID_WINDOW_HighDistortion:
+		sendMessage(HighDistortion,2);
+		break;
+	case ID_WINDOW_LowDistortion:
+		sendMessage(LowDistortion,2);
+		break;
+	case ID_WINDOW_BothDistortion:
+		sendMessage(BothDistortion,2);
+		break;
+	case ID_WINDOW_CrossDistortion:
+		sendMessage(CrossDistortion,2);
+	}
+	return false;
 }
 
 static bool onButtonClick_Clear(ZKButton *pButton) {
-    LOGD(" ButtonClick Clear !!!\n");
-    mRadioGroup1Ptr->clearCheck();
-    mPhotoShowPtr->setBackgroundPic("");
-    mDebugHandler->clear();
-    mDistortionDegreePtr->setText("非线性失真度:--");
-    mActivityPtr->unregisterUserTimer(0);
-    mDiagram1Ptr->ClearData(0);
-    return false;
+	LOGD(" ButtonClick Clear !!!\n");
+	mRadioGroup1Ptr->clearCheck();
+	mPhotoShowPtr->setBackgroundPic("");
+	mDebugHandler->clear();
+	mDistortionDegreePtr->setText("非线性失真度：--");
+	pButton->setSelected(!pButton->isSelected());
+	sIsRefreshing = !sIsRefreshing;
+	if(sIsRefreshing){
+		sIsRefreshing = !sIsRefreshing;
+	}
+	else{
+		mShowPtr->setText("显示波形");
+		mActivityPtr->unregisterUserTimer(0);
+		mDiagram1Ptr->setDataStraight(0);
+	}
+	return false;
 }
 static bool onButtonClick_Show(ZKButton *pButton) {
-    LOGD(" ButtonClick Show !!!\n");
-    if(pButton->isSelected()){
-    	LOGD("ShowButtonSelected\n");
-    }else{
-    	LOGD("ShowButtonUnselected\n");
-    }
-    pButton->setSelected(!pButton->isSelected());
-    sIsRefreshing = !pButton->isSelected();
-    if(sIsRefreshing){
-    	mShowPtr->setText("不显示波形");
-    	mActivityPtr->registerUserTimer(0,60);
-    	}
-        else{
-        	mShowPtr->setText("显示波形");
-        	mActivityPtr->unregisterUserTimer(0);
-        	mDiagram1Ptr->ClearData(0);
-        }
+	LOGD(" ButtonClick Show !!!\n");
+	//    if(pButton->isSelected()){
+	//    	LOGD("ShowButtonSelected\n");
+	//    }else{
+	//    	LOGD("ShowButtonUnselected\n");
+	//    }
+	pButton->setSelected(!pButton->isSelected());
+	//    if(pButton->isSelected()){
+	//        	LOGD("ShowButtonSelected\n");
+	//        }else{
+	//        	LOGD("ShowButtonUnselected\n");
+	//        }
+	sIsRefreshing = !sIsRefreshing;
+	if(sIsRefreshing){
+		mShowPtr->setText("不显示波形");
+		mDiagram1Ptr->ClearData(0);
+		mActivityPtr->registerUserTimer(0,60);
+	}
+	else{
+		mShowPtr->setText("显示波形");
+		mActivityPtr->unregisterUserTimer(0);
+		mDiagram1Ptr->setDataStraight(0);
+	}
 
-
-    return false;
+	return false;
 }

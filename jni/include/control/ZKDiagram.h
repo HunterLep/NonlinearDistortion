@@ -80,6 +80,8 @@ public:
 
 	void ClearData(int index);
 
+	void setDataStraight(int index);
+
 	void addDiagramInfo(int width, ARGB color, EDiagramStyle style,
 			double xScale, double yScale, float step, UINT eraseSpace, bool isAntialiasOn);
 
