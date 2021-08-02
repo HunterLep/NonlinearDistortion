@@ -5,9 +5,10 @@
 #include "../debugHandler/DebugHandler.h"
 
 /*TAG:GlobalVariable全局变量*/
+static ZKTextView* mTextView1Ptr;
+static ZKWindow* mWindow1Ptr;
 static ZKButton* mShowPtr;
 static ZKButton* mClearPtr;
-static ZKPainter* mPainter1Ptr;
 static ZKDiagram* mDiagram1Ptr;
 static ZKTextView* mPhotoShowPtr;
 static ZKTextView* mDebugText18Ptr;
@@ -34,6 +35,7 @@ static ZKButton* mMeasurePtr;
 static ZKButton* msys_homePtr;
 static windowActivity* mActivityPtr;
 static DebugHandler *mDebugHandler;
+static ZKButton* mTestPtr;
 
 /*register activity*/
 REGISTER_ACTIVITY(windowActivity);
@@ -164,9 +166,10 @@ const char* windowActivity::getAppName() const{
 //TAG:onCreate
 void windowActivity::onCreate() {
 	Activity::onCreate();
+    mTextView1Ptr = (ZKTextView*)findControlByID(ID_WINDOW_TextView1);
+    mWindow1Ptr = (ZKWindow*)findControlByID(ID_WINDOW_Window1);
     mShowPtr = (ZKButton*)findControlByID(ID_WINDOW_Show);
     mClearPtr = (ZKButton*)findControlByID(ID_WINDOW_Clear);
-    mPainter1Ptr = (ZKPainter*)findControlByID(ID_WINDOW_Painter1);
     mDiagram1Ptr = (ZKDiagram*)findControlByID(ID_WINDOW_Diagram1);
     mPhotoShowPtr = (ZKTextView*)findControlByID(ID_WINDOW_PhotoShow);
     mDebugText18Ptr = (ZKTextView*)findControlByID(ID_WINDOW_DebugText18);

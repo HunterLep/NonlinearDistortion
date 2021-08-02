@@ -1,5 +1,5 @@
 #pragma once
-#include "Rewrite.h"
+#include "../include/Rewrite/Rewrite.h"
 /*
  *此文件由GUI工具生成
  *文件功能：用于处理用户的逻辑相应代码
@@ -80,6 +80,7 @@ static const BYTE CrossDistortion[2]={CMDID_CrossDistortion,0x00};
 int ID;
 static bool sIsRefreshing = false;
 
+
 static void Changebackground(int checkedID){
 	char path[50]={0};
 	switch(checkedID){
@@ -121,11 +122,13 @@ static S_ACTIVITY_TIMEER REGISTER_ACTIVITY_TIMER_TAB[] = {
 
 static void onUI_init(){
 	//Tips :添加 UI初始化的显示代码到这里,如:mText1Ptr->setText("123");
+
 	for (int i = 0; i < DIAGRAM_SIZE; i++) {
 		sPoints[i].x = (100 * i) / DIAGRAM_SIZE;
 		sPoints[i].y = 5;
 	}
 	mDiagram1Ptr->setData(0, sPoints, DIAGRAM_SIZE);
+//	LOGD("%d %d %d %d\n",position.mHeight,position.mLeft,position.mTop,position.mWidth);
 }
 
 /**
@@ -292,6 +295,7 @@ static bool onButtonClick_Clear(ZKButton *pButton) {
 		mActivityPtr->unregisterUserTimer(0);
 		mDiagram1Ptr->setLineStraight(0);
 	}
+//	mWindow1Ptr->showWnd();
 	return false;
 }
 static bool onButtonClick_Show(ZKButton *pButton) {
@@ -317,7 +321,10 @@ static bool onButtonClick_Show(ZKButton *pButton) {
 		mShowPtr->setText("显示波形");
 		mActivityPtr->unregisterUserTimer(0);
 		mDiagram1Ptr->setLineStraight(0);
+
 	}
+
 
 	return false;
 }
+

@@ -28,6 +28,8 @@ DebugHandler::~DebugHandler() {
 	free(debugMessage);
 }
 
+
+
 void DebugHandler::addDebugMessage(char *message) {
 	if (message == NULL || message[0] == 0)
 		return;

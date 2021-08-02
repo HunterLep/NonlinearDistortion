@@ -4,6 +4,7 @@
 #include "../include/control/ZKRadioGroup.h"
 #include "../include/control/ZKDiagram.h"
 #include "../include/control/ZKTextView.h"
+#include "../include/window/ZKWindow.h"
 
 #define DIAGRAM_SIZE 100
 static MPPOINT sPoints[DIAGRAM_SIZE];
