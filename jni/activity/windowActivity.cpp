@@ -35,7 +35,6 @@ static ZKButton* mMeasurePtr;
 static ZKButton* msys_homePtr;
 static windowActivity* mActivityPtr;
 static DebugHandler *mDebugHandler;
-static ZKButton* mTestPtr;
 
 /*register activity*/
 REGISTER_ACTIVITY(windowActivity);
